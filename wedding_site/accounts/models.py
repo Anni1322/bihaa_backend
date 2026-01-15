@@ -107,28 +107,93 @@
 
 
 
-
-
-
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+# from django.db import models
+# from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+
+# --- Custom Manager ---
+class UserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError('The Email field must be set')
+        email = self.normalize_email(email)
+        
+        # Ensure username is not being passed if it's set to None in the model
+        extra_fields.pop('username', None) 
+        
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('role', 'admin')
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+
+        return self.create_user(email, password, **extra_fields)
+
+
+# --- Updated User Model ---
 class User(AbstractUser):
-    # Extends Django's AbstractUser; maps to Users table
+    # 1. Remove the username field inherited from AbstractUser
+    username = None 
+    
+    # 2. Use email as the primary identifier
     email = models.EmailField(unique=True)
-    password_hash = models.CharField(max_length=255)  # Redundant (Django handles passwords), but kept as per your code
-    created_at = models.DateTimeField(auto_now_add=True)
-    last_login = models.DateTimeField(null=True, blank=True)
-    is_active = models.BooleanField(default=True)
+    
+    # 3. Add your custom fields
     ROLE_CHOICES = [('user', 'User'), ('admin', 'Admin'), ('vendor', 'Vendor')]
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    # Note: 'is_active', 'last_login', and 'password' are 
+    # already included in AbstractUser. No need to redefine them.
 
+    # 4. Configure Authentication
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = [] # Email and Password are required by default
+
+    # 5. Attach the Manager
+    objects = UserManager()
 
     class Meta:
         db_table = 'Users'
+
+    def __str__(self):
+        return self.email
+
+
+# from django.db import models
+# from django.contrib.auth.models import AbstractUser
+# from django.core.validators import MinValueValidator, MaxValueValidator
+
+# class User(AbstractUser):
+#     # Extends Django's AbstractUser; maps to Users table
+#     email = models.EmailField(unique=True)
+#     password_hash = models.CharField(max_length=255)  # Redundant (Django handles passwords), but kept as per your code
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     last_login = models.DateTimeField(null=True, blank=True)
+#     is_active = models.BooleanField(default=True)
+#     ROLE_CHOICES = [('user', 'User'), ('admin', 'Admin'), ('vendor', 'Vendor')]
+#     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
+
+#     USERNAME_FIELD = 'email'
+#     REQUIRED_FIELDS = []
+
+#     class Meta:
+#         db_table = 'Users'
+
+
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -152,6 +217,8 @@ class Profile(models.Model):
 
     class Meta:
         db_table = 'Profiles'
+
+
 
 class Preferences(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -118,16 +118,37 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
 # --- Profile and Preferences ---
 
+# class ProfileSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Profile
+#         # Exclude 'user' as it's set automatically by the view
+#         exclude = ('user',) 
+
+ 
+
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        # Exclude 'user' as it's set automatically by the view
-        exclude = ('user',) 
+        # Exclude 'user' from fields because we set it automatically in the view
+        fields = [
+            'id', 'first_name', 'last_name', 'gender', 'date_of_birth', 
+            'height', 'religion', 'caste', 'occupation', 'education', 
+            'income_range', 'marital_status', 'about_me', 'interests', 
+            'profile_picture_url', 'is_verified'
+        ]
+        read_only_fields = ['is_verified'] # Only admins should verify
+        
+        
+
 
 class PreferencesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Preferences
         exclude = ('user',)
+        
+        
+        
+        
 
 class PhotoSerializer(serializers.ModelSerializer):
     class Meta:
