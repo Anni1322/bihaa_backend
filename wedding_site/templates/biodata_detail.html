@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata #{{ profile.serial_number }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #10b981; /* Emerald green */
+            --secondary-color: #f0fdf4; /* Light green */
+            --accent-color: #059669; /* Darker green */
+            --text-color: #1f2937;
+            --bg-gradient: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --border-radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            line-height: 1.7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .header {
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .header .serial {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+        }
+
+        .profile-photo-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .no-photo {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #9ca3af;
+            border: 3px dashed #d1d5db;
+            font-size: 1.1rem;
+            font-weight: 500;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .no-photo i {
+            font-size: 2.5rem;
+        }
+
+        /* Grid layout for fields */
+        .fields-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .field-item {
+            background: #f9fafb;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .field-item:hover {
+            background: #f0fdf4;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .field-item strong {
+            color: var(--accent-color);
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .contact-row {
+            grid-column: 1 / -1;
+            margin-top: 10px;
+            color: #dc2626;
+            background: #fef2f2;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .note {
+            grid-column: 1 / -1;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #6b7280;
+            text-align: center;
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .btn-wa {
+            grid-column: 1 / -1;
+            display: block;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-link {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-link a:hover {
+            color: var(--accent-color);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px;
+            }
+            .card {
+                padding: 20px;
+                max-width: 100%;
+            }
+            .profile-photo, .no-photo {
+                width: 150px;
+                height: 150px;
+            }
+            .header {
+                font-size: 1.2rem;
+            }
+            .fields-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .field-item strong {
+                min-width: 100px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="card">
+            <div class="header">
+                <div><i class="fas fa-leaf"></i> नि:शुल्क बायोडाटा <i class="fas fa-leaf"></i></div>
+                <div class="serial">सरल क्रमांक {{ profile.serial_number }}</div>
+            </div>
+
+            <div class="profile-photo-container">
+                {% if profile.profile_photo %}
+                    <img src="{{ profile.profile_photo.url }}" alt="{{ profile.full_name }}" class="profile-photo">
+                {% else %}
+                    <div class="no-photo">
+                        <i class="fas fa-user-circle"></i>
+                        फोटो उपलब्ध नहीं है
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="fields-grid">
+                <div class="field-item"><i class="fas fa-user"></i><strong>नाम :-</strong> {{ profile.full_name }}</div>
+                <div class="field-item"><i class="fas fa-users"></i><strong>जाति :-</strong> {{ profile.caste }}</div>
+                <div class="field-item"><i class="fas fa-dna"></i><strong>गोत्र :-</strong> {{ profile.gotra }}</div>
+                <div class="field-item"><i class="fas fa-om"></i><strong>देव संख्या :-</strong> {{ profile.deity_number }}</div>
+                <div class="field-item"><i class="fas fa-male"></i><strong>पिता का नाम :-</strong> {{ profile.father_name }}</div>
+                <div class="field-item"><i class="fas fa-female"></i><strong>माता का नाम :-</strong> {{ profile.mother_name }}</div>
+                <div class="field-item"><i class="fas fa-palette"></i><strong>रंग :-</strong> {{ profile.complexion }}</div>
+                <div class="field-item"><i class="fas fa-ruler-vertical"></i><strong>कद :-</strong> {{ profile.height }}</div>
+                <div class="field-item"><i class="fas fa-birthday-cake"></i><strong>जन्मतिथि :-</strong> {{ profile.date_of_birth|date:"d/m/Y" }}</div>
+                <div class="field-item"><i class="fas fa-user-friends"></i><strong>मामा का गोत्र :-</strong> {{ profile.maternal_uncle_gotra }}</div>
+                <div class="field-item"><i class="fas fa-graduation-cap"></i><strong>शिक्षा :-</strong> {{ profile.education }}</div>
+                <div class="field-item"><i class="fas fa-briefcase"></i><strong>वर्तमान व्यवसाय :-</strong> {{ profile.occupation }}</div>
+                <div class="field-item"><i class="fas fa-home"></i><strong>पारिवारिक स्थिति :-</strong> {{ profile.family_status }}</div>
+                <div class="field-item"><i class="fas fa-map-marker-alt"></i><strong>पूरा पता :-</strong> {{ profile.address }}</div>
+                
+                <div class="contact-row">
+                    <i class="fas fa-phone"></i><strong>संपर्क :-</strong> 
+                    {% if user.is_staff %} {{ profile.guardian_mobile }} {% else %} एडमिन से संपर्क करें। {% endif %}
+                </div>
+
+                <div class="note">
+                    *(अब जिन्हें भी रिश्ते की बात करना होगा, वे एडमिन से संपर्क नंबर लेंगे।)*
+                </div>
+
+                {% comment %} <a href="{{ whatsapp_url }}" target="_blank" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                </a> {% endcomment %}
+                
+                <div class="back-link">
+                    <a href="{% url 'biodata_list' %}">
+                        <i class="fas fa-arrow-left"></i> वापस (Back)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata #{{ profile.serial_number }}</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; width: 100%; max-width: 500px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); line-height: 1.6; }
+        .header { text-align: center; color: #008000; font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; }
+        
+        /* Photo Styling */
+        .profile-photo-container { text-align: center; margin-bottom: 20px; }
+        .profile-photo { 
+            width: 180px; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 50%; /* Circular photo */
+            border: 4px solid #008000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .no-photo {
+            width: 180px;
+            height: 180px;
+            background: #e9ecef;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #6c757d;
+            border: 2px dashed #ccc;
+        }
+
+        .row { margin-bottom: 8px; }
+        .btn-wa { display: block; background-color: #25D366; color: white; text-align: center; padding: 12px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        *गोंडवाना वैवाहिक ग्रुप (नि:शुल्क बायोडाटा)*<br>
+        *सरल क्रमांक {{ profile.serial_number }}*
+    </div>
+
+    <div class="profile-photo-container">
+        {% if profile.profile_photo %}
+            <img src="{{ profile.profile_photo.url }}" alt="{{ profile.full_name }}" class="profile-photo">
+        {% else %}
+            <div class="no-photo">फोटो उपलब्ध नहीं है</div>
+        {% endif %}
+    </div>
+    <div class="row">▶️ <strong>नाम :-</strong> {{ profile.full_name }}</div>
+    <div class="row">▶️ <strong>जाति :-</strong> {{ profile.caste }}</div>
+    <div class="row">▶️ <strong>गोत्र :-</strong> {{ profile.gotra }}</div>
+    <div class="row">▶️ <strong>देव संख्या :-</strong> {{ profile.deity_number }}</div>
+    <div class="row">▶️ <strong>पिता का नाम :-</strong> {{ profile.father_name }}</div>
+    <div class="row">▶️ <strong>माता का नाम :-</strong> {{ profile.mother_name }}</div>
+    <div class="row">▶️ <strong>रंग :-</strong> {{ profile.complexion }}</div>
+    <div class="row">▶️ <strong>कद :-</strong> {{ profile.height }}</div>
+    <div class="row">▶️ <strong>जन्मतिथि :-</strong> {{ profile.date_of_birth|date:"d/m/Y" }}</div>
+    <div class="row">▶️ <strong>मामा का गोत्र :-</strong> {{ profile.maternal_uncle_gotra }}</div>
+    <div class="row">▶️ <strong>शिक्षा :-</strong> {{ profile.education }}</div>
+    <div class="row">▶️ <strong>वर्तमान व्यवसाय :-</strong> {{ profile.occupation }}</div>
+    <div class="row">▶️ <strong>पारिवारिक स्थिति :-</strong> {{ profile.family_status }}</div>
+    <div class="row">▶️ <strong>पूरा पता :-</strong> {{ profile.address }}</div>
+    
+    <div class="row" style="margin-top: 15px; color: red;">
+        ▶️ <strong>संपर्क :-</strong> 
+        {% if user.is_staff %} {{ profile.guardian_mobile }} {% else %} एडमिन से संपर्क करें। {% endif %}
+    </div>
+
+    <div style="margin-top: 10px; font-size: 0.9em; font-style: italic; color: #555;">
+        *(अब जिन्हें भी रिश्ते की बात करना होगा, वे एडमिन से संपर्क नंबर लेंगे।)*
+    </div>
+
+    <a href="{{ whatsapp_url }}" target="_blank" class="btn-wa">
+        Share on WhatsApp 📲
+    </a>
+    
+    <div style="text-align: center; margin-top: 15px;">
+        <a href="{% url 'biodata_list' %}" style="color: #007bff; text-decoration: none;">← वापस (Back)</a>
+    </div>
+</div>
+
+</body>
+</html> {% endcomment %}

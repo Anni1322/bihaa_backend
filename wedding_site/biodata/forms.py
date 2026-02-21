@@ -1,0 +1,90 @@
+from django import forms
+from .models import CommunityBiodata
+
+class CommunityBiodataForm(forms.ModelForm):
+    class Meta:
+        model = CommunityBiodata
+        fields = '__all__'
+        widgets = {
+            'date_of_birth': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
+            'education': forms.Textarea(attrs={'rows': 2, 'class': 'form-control'}),
+            'family_status': forms.Textarea(attrs={'rows': 2, 'class': 'form-control'}),
+            
+            # Text Inputs
+            'full_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'caste': forms.TextInput(attrs={'class': 'form-control'}),
+            'gotra': forms.TextInput(attrs={'class': 'form-control'}),
+            'deity_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'father_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'mother_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'maternal_uncle_gotra': forms.TextInput(attrs={'class': 'form-control'}),
+            'complexion': forms.TextInput(attrs={'class': 'form-control'}),
+            'height': forms.TextInput(attrs={'class': 'form-control'}),
+            'occupation': forms.TextInput(attrs={'class': 'form-control'}),
+            'guardian_mobile': forms.TextInput(attrs={'class': 'form-control'}),
+            'serial_number': forms.TextInput(attrs={'class': 'form-control'}),
+            
+            # File Input Styling
+            'profile_photo': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),
+        }
+        
+        
+        
+        
+        
+
+
+# from django import forms
+# from .models import CommunityBiodata
+
+# class CommunityBiodataForm(forms.ModelForm):
+#     class Meta:
+#         model = CommunityBiodata
+#         fields = '__all__'
+#         widgets = {
+#             'date_of_birth': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+#             'address': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
+#             'education': forms.Textarea(attrs={'rows': 2, 'class': 'form-control'}),
+#             'family_status': forms.Textarea(attrs={'rows': 2, 'class': 'form-control'}),
+#             # Apply standard class to all text inputs
+#             'full_name': forms.TextInput(attrs={'class': 'form-control'}),
+#             'caste': forms.TextInput(attrs={'class': 'form-control'}),
+#             'gotra': forms.TextInput(attrs={'class': 'form-control'}),
+#             'deity_number': forms.TextInput(attrs={'class': 'form-control'}),
+#             'father_name': forms.TextInput(attrs={'class': 'form-control'}),
+#             'mother_name': forms.TextInput(attrs={'class': 'form-control'}),
+#             'maternal_uncle_gotra': forms.TextInput(attrs={'class': 'form-control'}),
+#             'complexion': forms.TextInput(attrs={'class': 'form-control'}),
+#             'height': forms.TextInput(attrs={'class': 'form-control'}),
+#             'occupation': forms.TextInput(attrs={'class': 'form-control'}),
+#             'guardian_mobile': forms.TextInput(attrs={'class': 'form-control'}),
+#             'serial_number': forms.TextInput(attrs={'class': 'form-control'}),
+#         }
+        
+        
+
+
+# from django import forms
+# from .models import CommunityBiodata
+
+# class CommunityBiodataForm(forms.ModelForm):
+#     class Meta:
+#         model = CommunityBiodata
+#         fields = '__all__'
+#         widgets = {
+#             'date_of_birth': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+#             'address': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
+#             'education': forms.Textarea(attrs={'rows': 2, 'class': 'form-control'}),
+#             'family_status': forms.Textarea(attrs={'rows': 2, 'class': 'form-control'}),
+#         }
+#         labels = {
+#             # Labels are already defined in models.py verbose_name, 
+#             # but you can override them here if needed.
+#         }
+
+#     def __init__(self, *args, **kwargs):
+#         super(CommunityBiodataForm, self).__init__(*args, **kwargs)
+#         # Optional: Add Bootstrap/CSS classes to all fields loop
+#         for field in self.fields:
+#             self.fields[field].widget.attrs.update({'class': 'form-control'})

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Wedding Site{% endblock %}</title>
@@ -9,7 +10,7 @@
 <body>
     <header>
         <nav>
-            <a href="/">Home</a>
+            <a href="{% url 'biodata_list' %}">Home</a>
             {% if user.is_authenticated %}
                 <a href="{% url 'profile' %}">Profile</a>
                 <a href="{% url 'matches' %}">Matches</a>

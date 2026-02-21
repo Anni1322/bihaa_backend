@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>बिहाव - अपना जीवनसाथी चुनें</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#d41132",
+              "saffron": "#FF9933",
+              "gold": "#D4AF37",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221013",
+            },
+            fontFamily: {
+              "display": ["Noto Sans Devanagari", "Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+        .traditional-pattern {
+            background-image: radial-gradient(#d41132 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        body {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181112] dark:text-white transition-colors duration-300">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#f4f0f1] dark:border-white/10">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="bg-primary text-white p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-2xl">temple_hindu</span>
+</div>
+<h1 class="text-2xl font-extrabold tracking-tight text-primary">बिहाव</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-bold hover:text-primary transition-colors" href="#">प्रीमियम प्लान</a>
+<a class="text-sm font-bold hover:text-primary transition-colors" href="#">सफलता की कहानियाँ</a>
+<a class="text-sm font-bold hover:text-primary transition-colors" href="#">हमारे बारे में</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2 text-sm font-bold border border-transparent hover:border-primary/20 rounded-lg dark:text-white transition-all">लॉगिन</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg text-sm font-bold transition-all shadow-md shadow-primary/20">रजिस्टर</button>
+</div>
+</div>
+</header>
+<main>
+<section class="relative min-h-[600px] flex items-center justify-center py-20 px-6">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxS2HC-sKlAMi0hsyj0FaStQlj0DtsRguXiaWATK4naMy_Beljab0jdqL0fdONe07FeSh3QVA3GXByz-3tNr2-AI4p8XCTE_Z-4kGH499AWGaFPnizIYlWRQc7jZvfogKYPFTGsNLZ8I91vWA9M-510Yu-0_qLzCRFwQrEFFGiYrFbV6Skq07Dq83SkWji6nQurbnr6io1kaOk-vuz-7zhJtysNQlAX7NXTByI8YpH1ECkD22JhtjR9JQGLJSmFLmBALpjXPLwx6Xg');"></div>
+</div>
+<div class="relative z-20 max-w-5xl w-full text-center">
+<h2 class="text-white text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                सही जीवनसाथी की तलाश <span class="text-saffron">यहाँ शुरू होती है</span>
+</h2>
+<p class="text-white/90 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+                भारत के सबसे भरोसेमंद मैट्रिमोनी प्लेटफॉर्म पर अपना आदर्श जीवनसाथी खोजें, जहाँ परंपराएं आधुनिकता से मिलती हैं।
+            </p>
+<div class="bg-white/10 backdrop-blur-xl p-2 rounded-2xl border border-white/20 shadow-2xl">
+<div class="bg-white dark:bg-background-dark rounded-xl p-6 flex flex-wrap lg:flex-nowrap items-end gap-4">
+<div class="flex-1 min-w-[180px] text-left">
+<label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">मैं ढूंढ रहा हूँ</label>
+<select class="w-full border-gray-200 dark:border-white/10 dark:bg-background-dark rounded-lg h-12 text-sm focus:ring-primary focus:border-primary">
+<option>वधु</option>
+<option>वर</option>
+</select>
+</div>
+<div class="flex-1 min-w-[150px] text-left">
+<label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">आयु</label>
+<div class="flex items-center gap-2">
+<select class="w-full border-gray-200 dark:border-white/10 dark:bg-background-dark rounded-lg h-12 text-sm focus:ring-primary focus:border-primary">
+<option>21</option>
+<option>25</option>
+</select>
+<span class="text-gray-400">से</span>
+<select class="w-full border-gray-200 dark:border-white/10 dark:bg-background-dark rounded-lg h-12 text-sm focus:ring-primary focus:border-primary">
+<option>30</option>
+<option>35</option>
+</select>
+</div>
+</div>
+<div class="flex-1 min-w-[180px] text-left">
+<label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">धर्म</label>
+<select class="w-full border-gray-200 dark:border-white/10 dark:bg-background-dark rounded-lg h-12 text-sm focus:ring-primary focus:border-primary">
+<option>सभी धर्म</option>
+<option>हिंदू</option>
+<option>मुस्लिम</option>
+<option>सिख</option>
+<option>ईसाई</option>
+</select>
+</div>
+<div class="flex-1 min-w-[180px] text-left">
+<label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">समुदाय</label>
+<select class="w-full border-gray-200 dark:border-white/10 dark:bg-background-dark rounded-lg h-12 text-sm focus:ring-primary focus:border-primary">
+<option>सभी समुदाय</option>
+<option>हिंदी</option>
+<option>बंगाली</option>
+<option>पंजाबी</option>
+<option>तेलुगु</option>
+</select>
+</div>
+<button class="w-full lg:w-auto bg-primary hover:bg-primary/90 text-white font-bold h-12 px-10 rounded-lg flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">search</span> खोजें
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white dark:bg-background-dark traditional-pattern relative">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h3 class="text-3xl md:text-4xl font-extrabold text-primary mb-4">हमें क्यों चुनें?</h3>
+<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">हम आपके जीवनसाथी को सुरक्षित रूप से खोजने के लिए पारंपरिक मूल्यों को आधुनिक मिलान तकनीक के साथ जोड़ते हैं।</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 bg-background-light dark:bg-white/5 rounded-2xl border border-primary/10 hover:shadow-xl transition-shadow text-center">
+<div class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-primary">100% सत्यापित प्रोफाइल</h4>
+<p class="text-gray-600 dark:text-gray-400">अधिकतम विश्वास के लिए हर प्रोफाइल की मोबाइल और आधार के माध्यम से मैन्युअल रूप से जांच और सत्यापन किया जाता है।</p>
+</div>
+<div class="p-8 bg-background-light dark:bg-white/5 rounded-2xl border border-primary/10 hover:shadow-xl transition-shadow text-center">
+<div class="w-16 h-16 bg-saffron/10 text-saffron rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-saffron">पूर्ण गोपनीयता नियंत्रण</h4>
+<p class="text-gray-600 dark:text-gray-400">आप तय करते हैं कि आपकी तस्वीरें और संपर्क विवरण कौन देख सकता है। आपकी मानसिक शांति के लिए उन्नत गोपनीयता सेटिंग्स।</p>
+</div>
+<div class="p-8 bg-background-light dark:bg-white/5 rounded-2xl border border-primary/10 hover:shadow-xl transition-shadow text-center">
+<div class="w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-gold">स्मार्ट एआई मैचिंग</h4>
+<p class="text-gray-600 dark:text-gray-400">हमारे उन्नत एल्गोरिदम आपकी विशिष्ट सांस्कृतिक और व्यक्तिगत प्राथमिकताओं के आधार पर मैचों का सुझाव देते हैं।</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h3 class="text-3xl md:text-4xl font-extrabold text-[#181112] dark:text-white mb-4">यह कैसे काम करता है</h3>
+<p class="text-gray-500">अपना जीवनसाथी ढूंढना अब और भी आसान हो गया है</p>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="w-20 h-20 bg-white dark:bg-white/10 rounded-2xl shadow-lg flex items-center justify-center text-primary border border-gray-100 dark:border-white/10">
+<span class="material-symbols-outlined text-4xl">person_add</span>
+</div>
+<span class="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</span>
+</div>
+<h5 class="text-lg font-bold mb-2">प्रोफ़ाइल बनाएं</h5>
+<p class="text-sm text-gray-500">मुफ्त में पंजीकरण करें और अपनी विस्तृत साथी प्राथमिकताएं सेट करें।</p>
+</div>
+<div class="hidden md:block h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="w-20 h-20 bg-white dark:bg-white/10 rounded-2xl shadow-lg flex items-center justify-center text-saffron border border-gray-100 dark:border-white/10">
+<span class="material-symbols-outlined text-4xl">travel_explore</span>
+</div>
+<span class="absolute -top-3 -right-3 w-8 h-8 bg-saffron text-white rounded-full flex items-center justify-center font-bold">2</span>
+</div>
+<h5 class="text-lg font-bold mb-2">मैच खोजें</h5>
+<p class="text-sm text-gray-500">अपने मानदंडों से मेल खाने वाले हजारों सत्यापित प्रोफाइल देखें।</p>
+</div>
+<div class="hidden md:block h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+<div class="flex-1 flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="w-20 h-20 bg-white dark:bg-white/10 rounded-2xl shadow-lg flex items-center justify-center text-gold border border-gray-100 dark:border-white/10">
+<span class="material-symbols-outlined text-4xl">forum</span>
+</div>
+<span class="absolute -top-3 -right-3 w-8 h-8 bg-gold text-white rounded-full flex items-center justify-center font-bold">3</span>
+</div>
+<h5 class="text-lg font-bold mb-2">जुड़ना शुरू करें</h5>
+<p class="text-sm text-gray-500">रुचि व्यक्त करें और अपनी पसंद के प्रोफाइल के साथ बातचीत शुरू करें।</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h3 class="text-3xl md:text-4xl font-extrabold mb-4">सफलता की कहानियाँ</h3>
+<p class="text-gray-600 dark:text-gray-400">उन जोड़ों को जानें जिन्होंने 'बिहाव' के माध्यम से अपना जीवनसाथी पाया</p>
+</div>
+<button class="hidden md:flex items-center gap-2 text-primary font-bold hover:underline">
+                    सभी कहानियाँ देखें <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group cursor-pointer">
+<div class="relative h-96 w-full rounded-2xl overflow-hidden mb-4 shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCinjPyWpVSVUoLrqRkCLhe3lzTKh_aV3hg4wq-s4SzF0IqiNvp0Xqck6Uu4u_ENmKoQerg83f9EIk3wX3JeU8Oc914xtksjvcPMRrmdCvfPVddJjTL3j98yS6cCFPJoosNaAfiKh407uXWmBKGRWiXy80zZM2oSe4r5woPBI32C_69J4YKkApUrEzphSEos_ZnrzCRxeLJy-n2BEiQ8IvUc8bmg5nFmlwHQ04Vh_odWxKKAyhaPYAjWFL_Z5IIT2cSG3m_5A8HJR_l"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="text-lg font-bold">अनन्या और राहुल</p>
+<p class="text-sm text-white/80">विवाह: दिसंबर 2023</p>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-400 italic">"हमने कभी नहीं सोचा था कि जीवनसाथी ढूंढना इतना आसान होगा। इसे संभव बनाने के लिए बिहाव का धन्यवाद!"</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative h-96 w-full rounded-2xl overflow-hidden mb-4 shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgIFsBf9TFZrre8J1uHbpYTgSQgiMCtxEBqHsspaGHUTiWUK0f7BPy8h3TqgZyXgJAOw9QLWjokaANeX3RMo9rcSR9f_NfWSRUe2lGCeNp7eaZGbRaWtjFksJu_n4EUFnK80C1w3YBWWPjLf0UXahLy2DPbAEBMU88ejBZelS9QnZS4T_Vqsghmte8ru412809OM18eXKX1IszqIGruS5wgxNPkwsqJtXhDvBcwp0NF8CdB6w_X1Y7xTQ3y-EScx7SzEPqPLSPgWfJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="text-lg font-bold">प्रिया और विक्रम</p>
+<p class="text-sm text-white/80">विवाह: अक्टूबर 2023</p>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-400 italic">"फिल्टर ने हमें मूल्यों और पारिवारिक पृष्ठभूमि के मामले में वही ढूंढने में मदद की जो हम तलाश रहे थे।"</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative h-96 w-full rounded-2xl overflow-hidden mb-4 shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9U2Da9BCScsvNF2Nh-QDJ6P8k5zdV9Ug4Bz5rxbYZI8DMbF85jFA3Be1hVkeQME5jJn1BlFXNRSX2ZT3TSlqPS6GVlH7jDDzQf9I_pfWbSpD6pbEQW84C_BHM4oWaoyIel--6WIOJBb5QjTQkzZHhcF7P4aa-PVcUj--yThZzGMfYHdZEw0laJw7xVQWAq-hM9VpHM0J9dJjlBWR06sx5ohWzZuCiuvLArHFr0mkgjTBnca-_Sb1bmn_PHfXqzqN18bwjr6G9Hgbs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="text-lg font-bold">सान्या और अमित</p>
+<p class="text-sm text-white/80">विवाह: जनवरी 2024</p>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-400 italic">"सत्यापित प्रोफाइल ने हमें अगला कदम उठाने का आत्मविश्वास दिया। अत्यधिक अनुशंसित मंच!"</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="bg-primary rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-saffron/20 rounded-full blur-3xl"></div>
+<h3 class="text-3xl md:text-5xl font-extrabold mb-6 relative z-10">आज ही अपना जीवनसाथी खोजें</h3>
+<p class="text-white/80 text-lg mb-10 max-w-xl mx-auto relative z-10">लाखों उपयोगकर्ताओं से जुड़ें और एक सार्थक रिश्ते के लिए अपनी खोज शुरू करें।</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4 relative z-10">
+<button class="w-full md:w-auto bg-white text-primary hover:bg-gray-100 font-bold px-10 py-4 rounded-xl shadow-lg transition-all">अभी मुफ्त पंजीकरण करें</button>
+<button class="w-full md:w-auto bg-primary border-2 border-white/30 hover:bg-white/10 text-white font-bold px-10 py-4 rounded-xl transition-all">प्रीमियम प्लान देखें</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark text-white pt-20 pb-10 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<div class="bg-primary text-white p-1 rounded-lg">
+<span class="material-symbols-outlined">temple_hindu</span>
+</div>
+<h2 class="text-2xl font-extrabold tracking-tight">बिहाव</h2>
+</div>
+<p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    विभिन्न समुदायों और क्षेत्रों में जीवनसाथी खोजने के लिए भारत की प्रमुख मैट्रिमोनी सेवा। विश्वास और परंपरा पर निर्मित।
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">camera</span>
+</a>
+<a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">त्वरित लिंक</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">प्रोफाइल खोजें</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">सफलता की कहानियाँ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">प्रीमियम सदस्यता</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">बिहाव सलाह</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">सहायता</h4>
+<ul class="space-y-4 text-sm text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">24/7 ग्राहक सेवा</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">संपर्क करें</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">सुरक्षा टिप्स</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">फीडबैक</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">ऐप डाउनलोड करें</h4>
+<p class="text-sm text-gray-400 mb-4">चलते-फिरते अपना मैच खोजें। iOS और Android के लिए उपलब्ध।</p>
+<div class="space-y-3">
+<button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-3 flex items-center gap-3 transition-all">
+<span class="material-symbols-outlined text-2xl">phone_iphone</span>
+<div class="text-left">
+<p class="text-[10px] uppercase opacity-60 leading-none">Download on</p>
+<p class="text-sm font-bold leading-tight">App Store</p>
+</div>
+</button>
+<button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-3 flex items-center gap-3 transition-all">
+<span class="material-symbols-outlined text-2xl">play_store_installed</span>
+<div class="text-left">
+<p class="text-[10px] uppercase opacity-60 leading-none">Get it on</p>
+<p class="text-sm font-bold leading-tight">Google Play</p>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+<p>© 2024 बिहाव मैट्रिमोनियल सर्विसेज। सर्वाधिकार सुरक्षित।</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">गोपनीयता नीति</a>
+<a class="hover:text-white transition-colors" href="#">उपयोग की शर्तें</a>
+<a class="hover:text-white transition-colors" href="#">कुकी नीति</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

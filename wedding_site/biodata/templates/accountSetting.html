@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>बिहाव | खाता सेटिंग्स</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                        "neutral-light": "#fdfbfc",
+                        "border-light": "#e9e4e5",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #d41132;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #d41132;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display min-h-screen">
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-border-light dark:border-primary/20">
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-icons-outlined text-white">favorite</span>
+</div>
+<span class="text-2xl font-bold text-primary tracking-tight">बिहाव</span>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 hover:text-primary font-medium" href="#">डैशबोर्ड</a>
+<a class="text-slate-600 hover:text-primary font-medium" href="#">मैचेस</a>
+<a class="text-slate-600 hover:text-primary font-medium" href="#">संदेश</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-primary/10 rounded-full relative">
+<span class="material-icons-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<div class="h-8 w-px bg-border-light"></div>
+<div class="flex items-center gap-3">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover border border-border-light" data-alt="Professional profile picture of a young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7FMSgTtfcdfTN8PCwJXxkZFOsDILUu9gnspk385Xuz2YW9vxD6y0x68X30hFvwP_uyh7swcWlpCEZFV-wTVrnYiDZvHC0LGD4UPE6NTIJTUOZITk77_NmkeViAsXofQDuqU89OyIqABiuoz87PTPZcxRCnlHhThGMAbPmAgQyYd1WiZGSjklRIE5srU-UUW6QQBu0gz2FE46qoyR6HxoAFBqx8mpc07ci7j-NwfMqtYhbQqfPyee767ZXYAAcha_F9UxHWhozKHfT"/>
+<div class="hidden lg:block">
+<p class="text-sm font-semibold leading-tight">आर्यन शर्मा</p>
+<p class="text-xs text-slate-500">प्रीमियम सदस्य</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<aside class="w-full lg:w-64 space-y-2 shrink-0">
+<h2 class="px-4 mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">खाता सेटिंग्स</h2>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-xl shadow-lg shadow-primary/20 transition-all" href="#privacy">
+<span class="material-icons-outlined text-[20px]">lock</span>
+<span class="font-medium">गोपनीयता सेटिंग्स</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-primary/10 hover:text-primary rounded-xl transition-all" href="#notifications">
+<span class="material-icons-outlined text-[20px]">notifications_active</span>
+<span class="font-medium">सूचना प्राथमिकताएं</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-primary/10 hover:text-primary rounded-xl transition-all" href="#security">
+<span class="material-icons-outlined text-[20px]">security</span>
+<span class="font-medium">पासवर्ड बदलें</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-primary/10 hover:text-primary rounded-xl transition-all" href="#help">
+<span class="material-icons-outlined text-[20px]">help_outline</span>
+<span class="font-medium">सहायता केंद्र</span>
+</a>
+<div class="pt-4 mt-4 border-t border-border-light">
+<a class="flex items-center gap-3 px-4 py-3 text-rose-600 hover:bg-rose-50 rounded-xl transition-all" href="#deactivate">
+<span class="material-icons-outlined text-[20px]">delete_outline</span>
+<span class="font-medium">खाता निष्क्रिय करें</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 space-y-8">
+<div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl flex items-center gap-3 text-emerald-800">
+<span class="material-icons-outlined">check_circle</span>
+<span class="text-sm font-medium">आपकी गोपनीयता सेटिंग्स सफलतापूर्वक अपडेट कर दी गई हैं।</span>
+</div>
+<section class="bg-white dark:bg-background-dark/50 rounded-xl border border-border-light dark:border-primary/10 overflow-hidden" id="privacy">
+<div class="p-6 border-b border-border-light dark:border-primary/10">
+<h3 class="text-xl font-bold">गोपनीयता सेटिंग्स</h3>
+<p class="text-slate-500 text-sm">नियंत्रित करें कि आपकी प्रोफ़ाइल जानकारी कौन देख सकता है और आपसे संपर्क कर सकता है।</p>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold">प्रोफ़ाइल फोटो दृश्यता</p>
+<p class="text-sm text-slate-500">नियंत्रित करें कि आपकी अपलोड की गई तस्वीरें कौन देख सकता है।</p>
+</div>
+<select class="form-select rounded-lg border-slate-200 focus:ring-primary focus:border-primary text-sm min-w-[180px]">
+<option>सभी को दिखाई दे</option>
+<option>मैचेस को दिखाई दे</option>
+<option>सिर्फ मुझे</option>
+</select>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold">फ़ोन नंबर एक्सेस</p>
+<p class="text-sm text-slate-500">संभावित मैचेस को अपना संपर्क नंबर देखने की अनुमति दें।</p>
+</div>
+<div class="relative inline-block w-12 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-slate-300" id="phone-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-300 cursor-pointer" for="phone-toggle"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-semibold">ऑनलाइन स्थिति</p>
+<p class="text-sm text-slate-500">दिखाएं कि आप पिछली बार इस प्लेटफॉर्म पर कब सक्रिय थे।</p>
+</div>
+<div class="relative inline-block w-12 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-slate-300" id="online-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-300 cursor-pointer" for="online-toggle"></label>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white dark:bg-background-dark/50 rounded-xl border border-border-light dark:border-primary/10 overflow-hidden" id="notifications">
+<div class="p-6 border-b border-border-light dark:border-primary/10">
+<h3 class="text-xl font-bold">सूचना प्राथमिकताएं</h3>
+<p class="text-slate-500 text-sm">अपने पसंदीदा चैनलों के माध्यम से मैचेस और संदेशों के साथ अपडेट रहें।</p>
+</div>
+<div class="p-6">
+<table class="w-full text-left">
+<thead>
+<tr class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+<th class="pb-4">सूचना का प्रकार</th>
+<th class="pb-4 text-center">ईमेल</th>
+<th class="pb-4 text-center">एसएमएस (SMS)</th>
+<th class="pb-4 text-center">पुश</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-primary/10">
+<tr>
+<td class="py-4">
+<p class="font-medium">नए मैचेस</p>
+<p class="text-xs text-slate-500">प्राथमिकताओं के आधार पर दैनिक चुनिंदा सूची</p>
+</td>
+<td class="py-4 text-center"><input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="py-4 text-center"><input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="py-4 text-center"><input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+</tr>
+<tr>
+<td class="py-4">
+<p class="font-medium">सीधे संदेश</p>
+<p class="text-xs text-slate-500">जब कोई आपके साथ चैट शुरू करता है</p>
+</td>
+<td class="py-4 text-center"><input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="py-4 text-center"><input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="py-4 text-center"><input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+</tr>
+<tr>
+<td class="py-4">
+<p class="font-medium">प्रोफ़ाइल व्यूज़</p>
+<p class="text-xs text-slate-500">किसने हाल ही में आपकी प्रोफ़ाइल देखी</p>
+</td>
+<td class="py-4 text-center"><input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="py-4 text-center"><input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="py-4 text-center"><input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="bg-white dark:bg-background-dark/50 rounded-xl border border-border-light dark:border-primary/10 overflow-hidden" id="security">
+<div class="p-6 border-b border-border-light dark:border-primary/10">
+<h3 class="text-xl font-bold">पासवर्ड बदलें</h3>
+<p class="text-slate-500 text-sm">अपने खाते को सुरक्षित रखने के लिए नियमित रूप से अपना पासवर्ड अपडेट करें।</p>
+</div>
+<div class="p-6 max-w-md space-y-4">
+<div class="space-y-1.5">
+<label class="text-sm font-semibold">वर्तमान पासवर्ड</label>
+<input class="w-full rounded-lg border-slate-200 focus:ring-primary focus:border-primary" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold">नया पासवर्ड</label>
+<input class="w-full rounded-lg border-slate-200 focus:ring-primary focus:border-primary" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-semibold">नए पासवर्ड की पुष्टि करें</label>
+<input class="w-full rounded-lg border-slate-200 focus:ring-primary focus:border-primary" placeholder="••••••••" type="password"/>
+</div>
+<div class="pt-4">
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-6 rounded-lg transition-colors">
+                            पासवर्ड अपडेट करें
+                        </button>
+</div>
+</div>
+</section>
+<section class="bg-rose-50/50 dark:bg-rose-950/20 rounded-xl border border-rose-100 dark:border-rose-900 overflow-hidden" id="deactivate">
+<div class="p-6">
+<div class="flex items-start gap-4">
+<div class="bg-rose-100 dark:bg-rose-900/50 p-3 rounded-lg text-rose-600">
+<span class="material-icons-outlined">warning</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-rose-900 dark:text-rose-100">खाता निष्क्रिय करें</h3>
+<p class="text-sm text-rose-700 dark:text-rose-400">यदि आपको अपना जीवनसाथी मिल गया है या आप कुछ समय का ब्रेक चाहते हैं, तो आप अपनी प्रोफ़ाइल को सभी खोज परिणामों से अस्थायी रूप से छिपा सकते हैं।</p>
+</div>
+</div>
+<div class="mt-6 flex gap-4">
+<button class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-2.5 px-6 rounded-lg transition-colors">
+                            मेरा खाता निष्क्रिय करें
+                        </button>
+<button class="text-rose-700 dark:text-rose-400 font-bold py-2.5 px-6 hover:underline underline-offset-4">
+                            खाता स्थायी रूप से हटा दें
+                        </button>
+</div>
+</div>
+</section>
+<div class="flex items-center justify-end gap-4 py-6 border-t border-border-light dark:border-primary/10">
+<button class="px-6 py-2.5 font-bold text-slate-500 hover:text-primary transition-colors">रद्द करें</button>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all">
+                    सभी परिवर्तन सहेजें
+                </button>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-12 border-t border-border-light dark:border-primary/10 mt-12">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<p class="text-slate-400 text-sm">© 2024 बिहाव मैट्रिमोनी। प्यार की खोज, एक क्लिक की दूरी पर।</p>
+<div class="flex justify-center gap-6 mt-4">
+<a class="text-xs text-slate-500 hover:text-primary" href="#">सेवा की शर्तें</a>
+<a class="text-xs text-slate-500 hover:text-primary" href="#">गोपनीयता नीति</a>
+<a class="text-xs text-slate-500 hover:text-primary" href="#">कुकी सेटिंग्स</a>
+</div>
+</div>
+</footer>
+
+</body></html>

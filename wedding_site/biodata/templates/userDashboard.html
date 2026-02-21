@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>बिहाव डैशबोर्ड - जीवनसाथी की तलाश</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: {
+                        "sans": ["Noto Sans Devanagari", "Plus Jakarta Sans", "sans-serif"],
+                        "display": ["Noto Sans Devanagari", "Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-primary/10 shadow-sm">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="text-primary text-2xl font-bold tracking-tight">बिहाव <span class="text-slate-700 dark:text-slate-300 font-normal text-lg ml-1">Bihav</span></div>
+<div class="relative hidden lg:block">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-background-light dark:bg-slate-800 border-none rounded-full text-sm w-64 focus:ring-1 focus:ring-primary" placeholder="आईडी या नाम से खोजें..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">notifications</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">3</span>
+</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons">chat_bubble_outline</span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200 dark:border-slate-800">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold">अमित शर्मा</p>
+<p class="text-xs text-slate-500">आईडी: BH99281</p>
+</div>
+<img alt="अमित शर्मा की प्रोफाइल" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2yIDqW2Nh1wxqT8u1wO5AM4VsKOOHSrUuvBzfurHMlgNnUqWfCrdQrzpV0xFDuEVxrQpievB0g0ehTHmTuBIBvUSmnAtSYttIJ4kzfy9m6YOLB9HmpJElSyuLZv1tFG1fIvE8f_GgfO6H8RKkj6DV_kUECKsjUKgt6WefIfQF7OoLk7d3wt8ZbsXbs2svprc5fuwH5FMHetgJm_TXsMs5fytVW7lT3k23Nz1tZteAmqIH_zVIUkBFXYO0l37egYcKPtYyECkcPr-t"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-6 py-8">
+<div class="grid grid-cols-12 gap-8">
+<aside class="col-span-12 lg:col-span-2 space-y-2">
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-primary text-white font-medium" href="#">
+<span class="material-icons text-xl">dashboard</span> डैशबोर्ड
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons text-xl">person_search</span> खोजें
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons text-xl">favorite</span> मेरे मैच
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons text-xl">mail</span> संदेश
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons text-xl">star</span> प्रीमियम
+                </a>
+</nav>
+</aside>
+<div class="col-span-12 lg:col-span-7 space-y-8">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-icons text-8xl text-primary">analytics</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2 flex-1">
+<h2 class="text-xl font-bold">प्रोफ़ाइल पूर्णता: <span class="text-primary">75%</span></h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm">3 गुना अधिक प्रतिक्रियाएं पाने के लिए अपने पेशेवर विवरण और पारिवारिक जानकारी जोड़ें।</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 mt-4">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<button class="bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2 shrink-0">
+                        अधिक जानकारी जोड़ें <span class="material-icons text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center border-b border-slate-200 dark:border-slate-800 overflow-x-auto">
+<button class="px-6 py-4 text-primary border-b-2 border-primary font-bold text-sm whitespace-nowrap">दैनिक सुझाव</button>
+<button class="px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-primary font-medium text-sm whitespace-nowrap">हाल के आगंतुक</button>
+<button class="px-6 py-4 text-slate-500 dark:text-slate-400 hover:text-primary font-medium text-sm whitespace-nowrap">आपसी मेल</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative h-48">
+<img alt="प्रियंका वी. की तस्वीर" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeTJHaDAkACkUI9yMZV6ZANFWAhn126v-lg8ZbZfLeE4z-mKxZ35vD0S4xOZJzmW0zu6CiAXOo3OpdcRPUngcDw3MOI3I3MsWxAsEB9cDyRkA75MZBFzFvb0Tq0mpXVNduC4DI_f3T6h0W5uTGFnkku7rHherDFmS4pgRAbC4IjaG8y4uxrY8RgeLmTCA8azYhBUBbExVhDDWgAJS8mwzH9zzymDdm1yDVm-DaLLMbybHJerz3GBh7gVc2dyZzUJiiEnenygQcTob4"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+<span class="material-icons text-base">favorite_border</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+<span class="text-white text-xs bg-primary px-2 py-0.5 rounded">नया मैच</span>
+</div>
+</div>
+<div class="p-4 space-y-3">
+<div>
+<h3 class="font-bold text-lg">प्रियंका वी. <span class="text-slate-400 font-normal">, 26</span></h3>
+<p class="text-slate-500 text-sm">सॉफ्टवेयर इंजीनियर</p>
+</div>
+<div class="flex flex-wrap gap-2 text-xs">
+<span class="bg-background-light dark:bg-slate-800 px-2 py-1 rounded">5'4"</span>
+<span class="bg-background-light dark:bg-slate-800 px-2 py-1 rounded">ब्राह्मण</span>
+<span class="bg-background-light dark:bg-slate-800 px-2 py-1 rounded">मुंबई, भारत</span>
+</div>
+<div class="pt-2 flex gap-2">
+<button class="flex-1 bg-primary text-white py-2 rounded font-semibold text-sm hover:bg-red-700">जुड़ें</button>
+<button class="px-3 border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-slate-400 hover:bg-slate-50"><span class="material-icons text-sm">visibility</span></button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="relative h-48">
+<img alt="अंजलि आर. की तस्वीर" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-tcqVroKQzmAawJKNWa3Als35yO6hHnc_XXlvXrCq4a1zssjwMBF2oGsw9YMruWh79DyRt4f49W3ViUsQZ6hT1k4Y8o-8lSGTClbaVOVM_B4-KW2dbf4KTz1ISuDs1GBxfgCJuMa_zyOKgKDn1PpMKbRrHAVM88VLsCCTsJbthjMTbpW-1VYUtBAFrYN7rHWZ8pCT92vRmfMetjXbswOcaxNn5DMFP4yMB6nAfMdFNptR-ch2ZoBa-cKVOQyBneqdynxyhHIv-aVm"/>
+<div class="absolute top-3 right-3">
+<button class="bg-white/90 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+<span class="material-icons text-base">favorite_border</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+<span class="text-white text-xs bg-green-600 px-2 py-0.5 rounded">98% मैच</span>
+</div>
+</div>
+<div class="p-4 space-y-3">
+<div>
+<h3 class="font-bold text-lg">अंजलि आर. <span class="text-slate-400 font-normal">, 27</span></h3>
+<p class="text-slate-500 text-sm">चार्टर्ड अकाउंटेंट</p>
+</div>
+<div class="flex flex-wrap gap-2 text-xs">
+<span class="bg-background-light dark:bg-slate-800 px-2 py-1 rounded">5'6"</span>
+<span class="bg-background-light dark:bg-slate-800 px-2 py-1 rounded">राजपूत</span>
+<span class="bg-background-light dark:bg-slate-800 px-2 py-1 rounded">दिल्ली, भारत</span>
+</div>
+<div class="pt-2 flex gap-2">
+<button class="flex-1 bg-primary text-white py-2 rounded font-semibold text-sm hover:bg-red-700">जुड़ें</button>
+<button class="px-3 border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-slate-400 hover:bg-slate-50"><span class="material-icons text-sm">visibility</span></button>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-primary font-bold text-sm bg-primary/5 rounded-lg border border-dashed border-primary/30 hover:bg-primary/10 transition-colors">
+                    और अधिक सुझाव देखें
+                </button>
+</div>
+</div>
+<aside class="col-span-12 lg:col-span-3 space-y-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="font-bold text-slate-800 dark:text-slate-100">प्राप्त रुचियाँ</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">12 नई</span>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="मेघा शर्मा की तस्वीर" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZR_JHQy_Phc5ebXNqnPFU3mEOG1fxFQixq_BqeHriDp9kfpL0RNqsanFOpJ24NRB-DlBMeHsA892Y6E64eW_fP9DEZbVBi1IAgxQc8t8cOVWRdEynRvSC6xPbO7sA-_Bi3fxy0kjjHVEmctGY3LiZ0AA9WE4tl9HIs2SWqYSpY-RWVTQ7aobt3p4BYzt5ycjj1eRd-Ghl7jQqaYBEq9OPkwUTBDr2WLRXJG-ubgrT_m59O276KTisb5W5IGd2g8aSpHAH6bZD4vcu"/>
+<div class="flex-1">
+<p class="text-sm font-semibold">मेघा शर्मा</p>
+<p class="text-xs text-slate-500">2 घंटे पहले</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-1.5 rounded-full transition-colors">
+<span class="material-icons text-xl">check_circle</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<img alt="पूजा गुप्ता की तस्वीर" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzgc7TXskLWPAwOFyGd0mWbUDy-zd4Rs0AKR0qE2ifPCskJ7v7Kt_wSUp0KAbJne7urlgCLLomWZIwdvsTaCL_R0GhOblsV-QB_eJVA1Ru1vcgh4taYN1XocWS40Uh7VMn86OHI3XYYPZPwXelSrcz4ZxzGHpKC1AEh4dRrftzWCWYEQzE7v-XVyZzmRfcSpuUDpu6ueiLWoao4jteyu-SiqkRP6o9wtXYd-rC0dB6LqqmC1BEYtvurz8YD3CZVROSaRAcvXb--dQH"/>
+<div class="flex-1">
+<p class="text-sm font-semibold">पूजा गुप्ता</p>
+<p class="text-xs text-slate-500">कल</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-1.5 rounded-full transition-colors">
+<span class="material-icons text-xl">check_circle</span>
+</button>
+</div>
+<a class="block text-center text-xs text-primary font-bold py-2 border-t border-slate-50 dark:border-slate-800 mt-2" href="#">सभी रुचियाँ देखें</a>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-slate-100 dark:border-slate-800">
+<h3 class="font-bold text-slate-800 dark:text-slate-100">शॉर्टलिस्ट की गई प्रोफ़ाइल</h3>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="ईशानी पटेल की तस्वीर" class="w-12 h-12 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEc95no3UWrvVO85stqHp1wJDeCTIjj65x4OAYLO27OGFTEb0pN0MRuwpxUGk5WhiK4grbiL1lZAHp-IbnR187LyN8Y6by3j6KWvEJ5P_RByfZuov7icEjKu0EUujBRFakTci9Za-JTM0ogWloLQd9Evu3SnZhd0G0lvY2VCGwIFwYnY8bXTDY_GBdJLYP_XMqaJlWhHEB5gm404Bz4sLeTacwEKnWA0RQm6_LnmNRg0pgsSIbx-MN3CjKCj5m0L30aeEkyUwq9fus"/>
+<div class="absolute -bottom-1 -right-1 bg-green-500 w-3 h-3 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">ईशानी पटेल</p>
+<p class="text-xs text-slate-500 truncate">सॉफ्टवेयर डेवलपर • न्यूयॉर्क</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="तन्वी मल्होत्रा की तस्वीर" class="w-12 h-12 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM5g5lpTjju_eYFW1Q6ydd0udJlFOqyrOVVraoMwND8QyOPFQfML2lCFSVAa2kGcnvE4G2W0T2BCQE3hMBZGCgCGd1vF0-NCj_FrBpoCodgweOOZ6ByTJGm7rdsNBpyzvxb9Q-XT6hWlTChF6SfoqWVrA1hK5GOhDR6X79y5qpx4lL7K5lmm0o7zhuoQ9G21tvIPsyE2nx6ORFgZhO3UnC2aNRoK4e_4jZ2nESj021xKwbBif9M6FaXSPrVRyDxehb0W_MV1XWVKj0"/>
+<div class="absolute -bottom-1 -right-1 bg-slate-300 w-3 h-3 border-2 border-white dark:border-slate-900 rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">तन्वी मल्होत्रा</p>
+<p class="text-xs text-slate-500 truncate">आर्किटेक्ट • मुंबई</p>
+</div>
+</div>
+<a class="block text-center text-xs text-primary font-bold py-2 border-t border-slate-50 dark:border-slate-800 mt-2" href="#">शॉर्टलिस्ट प्रबंधित करें</a>
+</div>
+</div>
+<div class="bg-gradient-to-br from-primary to-red-800 rounded-xl p-6 text-white text-center space-y-4 shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-20">
+<span class="material-icons text-6xl">verified</span>
+</div>
+<h4 class="text-lg font-bold">प्रीमियम में अपग्रेड करें</h4>
+<p class="text-xs text-white/80">सीधे संपर्क नंबर और प्राथमिकता लिस्टिंग प्राप्त करें।</p>
+<button class="bg-white text-primary px-6 py-2 rounded-full text-sm font-bold w-full hover:bg-slate-100 transition-colors shadow-md">अभी शुरू करें</button>
+</div>
+</aside>
+</div>
+</main>
+<footer class="max-w-[1440px] mx-auto px-6 py-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-slate-500">© 2024 बिहाव मैट्रिमोनी. सर्वाधिकार सुरक्षित।</p>
+<div class="flex gap-6 text-sm text-slate-500">
+<a class="hover:text-primary" href="#">सहायता केंद्र</a>
+<a class="hover:text-primary" href="#">गोपनीयता नीति</a>
+<a class="hover:text-primary" href="#">सुरक्षा युक्तियाँ</a>
+<a class="hover:text-primary" href="#">सफलता की कहानियाँ</a>
+</div>
+</footer>
+
+</body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata #{{ profile.serial_number }}</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; width: 100%; max-width: 500px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); line-height: 1.6; }
+        .header { text-align: center; color: #008000; font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; }
+        .row { margin-bottom: 8px; }
+        .btn-wa { display: block; background-color: #25D366; color: white; text-align: center; padding: 12px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        *गोंडवाना वैवाहिक ग्रुप (नि:शुल्क बायोडाटा)*<br>
+        *सरल क्रमांक {{ profile.serial_number }}*
+    </div>
+
+    <div class="row">▶️ <strong>नाम :-</strong> {{ profile.full_name }}</div>
+    <div class="row">▶️ <strong>जाति :-</strong> {{ profile.caste }}</div>
+    <div class="row">▶️ <strong>गोत्र :-</strong> {{ profile.gotra }}</div>
+    <div class="row">▶️ <strong>देव संख्या :-</strong> {{ profile.deity_number }}</div>
+    <div class="row">▶️ <strong>पिता का नाम :-</strong> {{ profile.father_name }}</div>
+    <div class="row">▶️ <strong>माता का नाम :-</strong> {{ profile.mother_name }}</div>
+    <div class="row">▶️ <strong>रंग :-</strong> {{ profile.complexion }}</div>
+    <div class="row">▶️ <strong>कद :-</strong> {{ profile.height }}</div>
+    <div class="row">▶️ <strong>जन्मतिथि :-</strong> {{ profile.date_of_birth|date:"d/m/Y" }}</div>
+    <div class="row">▶️ <strong>मामा का गोत्र :-</strong> {{ profile.maternal_uncle_gotra }}</div>
+    <div class="row">▶️ <strong>शिक्षा :-</strong> {{ profile.education }}</div>
+    <div class="row">▶️ <strong>वर्तमान व्यवसाय :-</strong> {{ profile.occupation }}</div>
+    <div class="row">▶️ <strong>पारिवारिक स्थिति :-</strong> {{ profile.family_status }}</div>
+    <div class="row">▶️ <strong>पूरा पता :-</strong> {{ profile.address }}</div>
+    
+    <div class="row" style="margin-top: 15px; color: red;">
+        ▶️ <strong>संपर्क :-</strong> 
+        {% if user.is_staff %} {{ profile.guardian_mobile }} {% else %} एडमिन से संपर्क करें। {% endif %}
+    </div>
+
+    <div style="margin-top: 10px; font-size: 0.9em; font-style: italic; color: #555;">
+        *(अब जिन्हें भी रिश्ते की बात करना होगा, वे एडमिन से संपर्क नंबर लेंगे।)*
+    </div>
+
+    <a href="{{ whatsapp_url }}" target="_blank" class="btn-wa">
+        Share on WhatsApp 📲
+    </a>
+    
+    <div style="text-align: center; margin-top: 15px;">
+        <a href="{% url 'biodata_list' %}" style="color: #007bff; text-decoration: none;">← वापस (Back)</a>
+    </div>
+</div>
+
+</body>
+</html>

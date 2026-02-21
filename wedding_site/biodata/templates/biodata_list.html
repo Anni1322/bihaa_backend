@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #f3f4f6;
+            --text-color: #374151;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #430000 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            margin: 40px 0 20px;
+            font-weight: 600;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .no-img {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary-color);
+            color: #9ca3af;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .btn-view {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .btn-view:hover {
+            background: #3730a3;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>समुदाय बायोडाटा सूची</h2>
+    
+    <div class="grid">
+        {% for profile in profiles %}
+        <div class="card">
+            {% if profile.profile_photo %}
+                <img src="{{ profile.profile_photo.url }}" alt="{{ profile.full_name }}">
+            {% else %}
+                <div class="no-img">फोटो उपलब्ध नहीं है</div>
+            {% endif %}
+            
+            <h3>{{ profile.full_name }}</h3>
+            <p><strong>गोत्र:</strong> {{ profile.gotra }}</p>
+            <p><strong>क्रमांक:</strong> {{ profile.serial_number }}</p>
+            
+            <a href="{% url 'biodata_detail' profile.pk %}" class="btn-view">विवरण देखें</a>
+        </div>
+        {% empty %}
+        <p class="empty-message">कोई बायोडाटा नहीं मिला।</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Biodata List</title>
+    <style>
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        .card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; background: #eee; }
+        .no-img { height: 200px; display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #888; border-radius: 4px; }
+        .btn-view { display: inline-block; margin-top: 10px; padding: 8px 15px; background: #007bff; color: white; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">समुदाय बायोडाटा सूची</h2>
+    
+    <div class="grid">
+        {% for profile in profiles %}
+        <div class="card">
+            {% if profile.profile_photo %}
+                <img src="{{ profile.profile_photo.url }}" alt="{{ profile.full_name }}">
+            {% else %}
+                <div class="no-img">फोटो उपलब्ध नहीं है</div>
+            {% endif %}
+            
+            <h3>{{ profile.full_name }}</h3>
+            <p><strong>गोत्र:</strong> {{ profile.gotra }}</p>
+            <p><strong>क्रमांक:</strong> {{ profile.serial_number }}</p>
+            
+            <a href="{% url 'biodata_detail' profile.pk %}" class="btn-view">विवरण देखें</a>
+        </div>
+        {% empty %}
+        <p>कोई बायोडाटा नहीं मिला।</p>
+        {% endfor %}
+    </div>
+</body>
+</html> {% endcomment %}
